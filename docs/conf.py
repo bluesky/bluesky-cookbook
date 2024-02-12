@@ -12,6 +12,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx_autodoc_typehints",
     "sphinx_copybutton",
+    "sphinx_tags",
 ]
 
 source_suffix = [".rst", ".md"]
@@ -40,3 +41,5 @@ nitpick_ignore = [
 ]
 
 always_document_param_types = True
+
+tags_creat_tags = True
