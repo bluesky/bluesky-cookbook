@@ -1,4 +1,5 @@
 # bluesky-cookbook
+
 Documentation for various use cases, ideas and "recipes" within the bluesky framework
 
 Each recipe should:
@@ -11,3 +12,10 @@ Each recipe should:
     * Developer
     * Admin
     * Manager
+
+## How to Build
+
+```
+pip install nox
+nox -s docs
+```
