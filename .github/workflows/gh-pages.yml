@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main  # Set a branch name to trigger deployment
+      - 13-docs-cicd
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
