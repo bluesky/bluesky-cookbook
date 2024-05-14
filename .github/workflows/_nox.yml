@@ -1,9 +1,9 @@
 on:
   workflow_call:
     inputs:
-      tox:
+      nox:
         type: string
-        description: What to run under tox
+        description: What to run under nox
         required: true
 
 jobs:
@@ -17,5 +17,5 @@ jobs:
       - name: Install python packages
         uses: ./.github/actions/install_requirements
 
-      - name: Run tox
-        run: tox -e ${{ inputs.tox }}
+      - name: Run nox
+        run: nox -e ${{ inputs.nox }}
