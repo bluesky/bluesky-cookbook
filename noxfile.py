@@ -19,6 +19,8 @@ def docs(session: nox.Session) -> None:
     if args.builder != "html" and args.serve:
         session.error("Must not specify non-HTML builder with --serve")
 
+    session.env['LC_ALL'] = 'en_US.UTF-8'  # Adjust as necessary to match your available locale
+    session.env['LANG'] = 'en_US.UTF-8'  # Adjust as necessary
     extra_installs = ["sphinx-autobuild"] if args.serve else []
 
     # session.install("-r", "requirements.txt")
