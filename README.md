@@ -11,3 +11,10 @@ Each recipe should:
     * Developer
     * Admin
     * Manager
+
+## How to Build
+
+```
+pip install nox
+nox -s docs
+```
