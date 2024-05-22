@@ -3,7 +3,7 @@ from pathlib import Path
 from subprocess import check_output
 
 # import bluesky_cookbook
-# 
+#
 # import requests
 # import sys
 
@@ -11,12 +11,25 @@ project = "Bluesky Cookbook"
 copyright = f"{datetime.now().year} Bluesky Contributors"
 author = "Bluesky Contributors"
 
+
 extensions = [
-    "myst_parser",
+    # Use this for generating API docs
     "sphinx.ext.autodoc",
-    "sphinx.ext.intersphinx",
-    "sphinx.ext.mathjax",
+    # This can parse google style docstrings
     "sphinx.ext.napoleon",
+    # For linking to external sphinx documentation
+    "sphinx.ext.intersphinx",
+    # Add links to source code in API docs
+    "sphinx.ext.viewcode",
+    # Adds the inheritance-diagram generation directive
+    "sphinx.ext.inheritance_diagram",
+    # Add a copy button to each code block
+    "sphinx_copybutton",
+    # For the card element
+    "sphinx_design",
+    # So we can write markdown files
+    "myst_parser",
+    "sphinx.ext.mathjax",
     "sphinx_autodoc_typehints",
     "sphinx_copybutton",
     "sphinx_tags",
@@ -52,7 +65,7 @@ tags_creat_tags = True
 project = "bluesky-cookbook"
 
 # The full version, including alpha/beta/rc tags.
-release = 'v0.1.0'
+release = "v0.1.0"
 
 # The short X.Y version.
 if "+" in release:
@@ -62,30 +75,6 @@ if "+" in release:
     version = git_branch.decode().strip()
 else:
     version = release
-
-extensions = [
-    # Use this for generating API docs
-    "sphinx.ext.autodoc",
-    # This can parse google style docstrings
-    "sphinx.ext.napoleon",
-    # For linking to external sphinx documentation
-    "sphinx.ext.intersphinx",
-    # Add links to source code in API docs
-    "sphinx.ext.viewcode",
-    # Adds the inheritance-diagram generation directive
-    "sphinx.ext.inheritance_diagram",
-    # Add a copy button to each code block
-    "sphinx_copybutton",
-    # For the card element
-    "sphinx_design",
-    # So we can write markdown files
-    "myst_parser",
-    # OpenAPI directive
-    "sphinxcontrib.openapi",
-    # For documenting the CLI
-    "sphinx_click.ext",
-]
-
 # So we can use the ::: syntax
 myst_enable_extensions = ["colon_fence"]
 
