@@ -5,7 +5,17 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "bluesky-cookbook"
 dynamic = ["version"]
+description = "A collection of example uses of the Bluesky data acquisition framework."
 requires-python = ">=3.10"
+license = { file = "LICENSE" }
+
+[project.urls]
+GitHub = "https://github.com/bluesky/bluesky-cookbook"
+
+
+[tool.setuptools_scm]
+write_to = "src/blueapi/_version.py"
+
 
 [project.optional-dependencies]
 dev = [
@@ -23,5 +33,3 @@ dev = [
     "tox",
     "tox-direct",
 ]
-
-
