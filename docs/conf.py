@@ -1,10 +1,11 @@
 from datetime import datetime
-import sys
 from pathlib import Path
 from subprocess import check_output
-import bluesky_cookbook
 
-import requests
+# import bluesky_cookbook
+# 
+# import requests
+# import sys
 
 project = "Bluesky Cookbook"
 copyright = f"{datetime.now().year} Bluesky Contributors"
