@@ -9,3 +9,4 @@
 
 - {ref}`genindex`
 - {ref}`search`
+- {ref}`flyscanning`
