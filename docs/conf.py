@@ -52,7 +52,7 @@ tags_creat_tags = True
 project = "bluesky-cookbook"
 
 # The full version, including alpha/beta/rc tags.
-release = bluesky_cookbook.__version__
+release = 'v0.1.0'
 
 # The short X.Y version.
 if "+" in release:
