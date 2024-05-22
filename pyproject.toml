@@ -13,10 +13,6 @@ license = { file = "LICENSE" }
 GitHub = "https://github.com/bluesky/bluesky-cookbook"
 
 
-[tool.setuptools_scm]
-write_to = "src/blueapi/_version.py"
-
-
 [project.optional-dependencies]
 dev = [
     "furo",
