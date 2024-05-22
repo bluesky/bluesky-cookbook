@@ -2,7 +2,6 @@
 
 ```{toctree}
 :maxdepth: 2
-:hidden:
 ```
 
 ## Table of Contents
@@ -24,6 +23,15 @@ glossary
 ```
 +++
 Glossary explaining terms in typical usage. New users start here.
+:::
+
+:::{grid-item-card} {material-regular}`directions_walk;2em`
+```{toctree}
+:maxdepth: 2
+recipes
+```
++++
+Recipes are here
 :::
 
 ::::

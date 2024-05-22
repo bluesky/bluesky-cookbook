@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Glossary" href="../glossary.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>Flyscanning - bluesky-cookbook v0.1.0 documentation</title>
+        <title>&lt;no title&gt; - bluesky-cookbook v0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
@@ -194,7 +194,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -214,9 +214,9 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../glossary.html">Glossary</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Glossary</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Flyscanning</a></li>
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../glossary.html">Glossary</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Glossary</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/flyscanning.html">Flyscanning</a></li>
 </ul>
 </li>
 </ul>
@@ -239,7 +239,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/glossary/flyscanning.md.txt" title="View this page">
+  <a class="muted-link" href="../_sources/recipes/test.md.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -253,53 +253,20 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="flyscanning">
-<h1>Flyscanning<a class="headerlink" href="#flyscanning" title="Link to this heading">¶</a></h1>
-<section id="definition">
-<h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">¶</a></h2>
-<p>Flyscanning (also known as hardware triggered scanning, asynchronous acquisition, and hardware synchronized scanning) is the practice of accelerating the rate of data collection by handing control over to an external hardware system that can control and synchronize the triggering of detectors with other signals and/or commands. Flyscans take many forms.</p>
-</section>
-<section id="detector-synchronization">
-<h2>Detector Synchronization<a class="headerlink" href="#detector-synchronization" title="Link to this heading">¶</a></h2>
-<p><img alt="hardware-triggered setup" src="../_images/simple-hardware-scan.png" /></p>
-<p>A triggering system can send pulses to two or more detectors to make them expose simultaneously, or at different multiples of the same base rate (e.g. 200Hz and 400Hz).</p>
-</section>
-<section id="motor-trajectory-scanning">
-<h2>Motor Trajectory Scanning<a class="headerlink" href="#motor-trajectory-scanning" title="Link to this heading">¶</a></h2>
-<p><img alt="trajectory scanning setup" src="../_images/hardware-triggered-scan.png" /></p>
-<p>The triggering system can be configured to trigger the detectors at the same time as the motion controller commands the motors to go to certain points, or even exactly when they reach those points, using the readback values. This can be achieved on the scale of microseconds/nanoseconds, in comparison to traditional soft scans controlled via a network, which normally synchronize on the scale of seconds.</p>
-</section>
-<section id="outer-scanning">
-<h2>Outer Scanning<a class="headerlink" href="#outer-scanning" title="Link to this heading">¶</a></h2>
-<p>Outer scans are flyscans nested inside soft scans.</p>
-<p><img alt="hardware-triggered setup" src="../_images/outer-scan.png" /></p>
-<p>In the example above a 2D grid scan in <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> is repeated in a third dimension: <code class="docutils literal notranslate"><span class="pre">z</span></code>. Given that <code class="docutils literal notranslate"><span class="pre">z</span></code> only needs to move for every 1 in every 25 points, it could be synchronized via software rather than hardware without significantly affecting scan time (and saving the effort/expense of wiring it into a triggering system). It then becomes the responsibility of the software to move <code class="docutils literal notranslate"><span class="pre">z</span></code>, hand control to the external hardware, wait for one grid’s worth of points, take control back, and repeat.</p>
-</section>
-</section>
-
+          
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
           
-          <a class="prev-page" href="../glossary.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Glossary</div>
-                
-              </div>
-            </a>
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -317,30 +284,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Flyscanning</a><ul>
-<li><a class="reference internal" href="#definition">Definition</a></li>
-<li><a class="reference internal" href="#detector-synchronization">Detector Synchronization</a></li>
-<li><a class="reference internal" href="#motor-trajectory-scanning">Motor Trajectory Scanning</a></li>
-<li><a class="reference internal" href="#outer-scanning">Outer Scanning</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
