@@ -2,6 +2,8 @@
 
 Documentation for various use cases, ideas and "recipes" within the bluesky framework
 
+See it live [here](http://blueskyproject.io/bluesky-cookbook/)!
+
 Each recipe should:
 
 * Be self contained
