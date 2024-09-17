@@ -28,10 +28,10 @@ git clone git@github.com:bluesky/bluesky-cookbok
 
 ## Overview
 
-Each "recipe" is a directory under `docs/tutorials/` or `docs/how-to/`. It may
-contain one or more Markdown (`.md`) files with a mixture of narrative text and
-code. Each recipe directory may also contain supporting data files, scripts,
-illustrations, solutions to exercises, etc.
+Each "recipe" is a directory under `docs/recipes/tutorials/` or
+`docs/recipes/how-to/`. It may contain one or more Markdown (`.md`) files with
+a mixture of narrative text and code. Each recipe directory may also contain
+supporting data files, scripts, illustrations, solutions to exercises, etc.
 
 ```none
 $ tree docs/
@@ -39,11 +39,13 @@ docs/
 ├── conf.py
 ├── contributing.md
 ├── index.md
-├── tutorials
-│   ├── getting-started
-│   │   ├── hello-bluesky.md
-│   ├── flyscanning
-│   │   ├── basic-demo.md
+├── recipes
+│   ├── tutorials
+│   │   ├── getting-started
+│   │   │   └── hello-bluesky.md
+│   │   ├── flyscanning
+│   │   │   └── basic-demo.md
+│   ├── how-to
 ...
 ```
 
