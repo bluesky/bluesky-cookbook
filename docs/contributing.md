@@ -18,12 +18,12 @@ First, clone this repository.
 With HTTPS:
 
 ```sh
-git clone https://github.com/bluesky/bluesky-cookbok
+git clone https://github.com/bluesky/bluesky-cookbook
 ```
 
 With SSH:
 ```sh
-git clone git@github.com:bluesky/bluesky-cookbok
+git clone git@github.com:bluesky/bluesky-cookbook
 ```
 
 ## Overview
@@ -171,5 +171,5 @@ Once changes are merged to the `main` branch, the GitHub Actions [Publish workfl
   where users need to be handed Jupyter Notebook files directly, such as Google
   Colab.
 
-[notebooks-branch]: https://github.com/bluesky/bluesky-cookbok/tree/notebooks/docs/recipes
-[Publish workflow]: https://github.com/bluesky/bluesky-cookbok/actions/workflows/cd.yml
+[notebooks-branch]: https://github.com/bluesky/bluesky-cookbook/tree/notebooks/docs/recipes
+[Publish workflow]: https://github.com/bluesky/bluesky-cookbook/actions/workflows/cd.yml
