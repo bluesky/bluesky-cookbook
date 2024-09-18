@@ -1,7 +1,10 @@
 # Tutorials
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 :glob:
-tutorials/**/*
+tutorials/getting-started/
+tutorials/flyscanning/
 ```
+
+Test 4
