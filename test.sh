@@ -29,7 +29,7 @@ error_occurred=0
 
 # If --all is passed, locate eligible files and execute them all.
 if [ "$1" == "--all" ]; then
-    files=$(find docs/recipes/ -name "*.md" | grep -v .ipynb_checkpoints)
+    files=$(find docs/ -name "*.md" | grep -v .ipynb_checkpoints)
     for file in $files; do
         if [ -f "$file" ]; then
 	    # Extract the kernel information from the Jupytext Markdown file

@@ -1,10 +1,9 @@
 # Bluesky Cookbook
 
 ```{toctree}
-:maxdepth: 1
-:glob:
-recipes/tutorials.md
-recipes/how-to.md
+:maxdepth: 2
+tutorials
+how-to
 glossary
 contributing
 ```

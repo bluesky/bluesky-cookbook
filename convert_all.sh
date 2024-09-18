@@ -10,7 +10,7 @@ fi
 error_occurred=0
 
 if [ "$1" = "ipynb" ]; then
-    files=$(find docs/recipes/ -name "*.md" | grep -v .ipynb_checkpoints)
+    files=$(find docs/ -name "*.md" | grep -v .ipynb_checkpoints)
     for file in $files; do
         # Extract the kernel information from the Jupytext Markdown file
         kernel_info=$(grep -A 10 '^---$' "$file" | grep -E 'kernelspec')
@@ -27,7 +27,7 @@ if [ "$1" = "ipynb" ]; then
         fi
     done
 elif [ "$1" = "md" ]; then
-    files=$(find docs/recipes/ -name "*.ipynb" | grep -v .ipynb_checkpoints)
+    files=$(find docs/ -name "*.ipynb" | grep -v .ipynb_checkpoints)
     for file in $files; do
         jupytext --to markdown "$file" && rm "$file"
         if [ $? -ne 0 ]; then

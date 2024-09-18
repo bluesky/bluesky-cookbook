@@ -40,17 +40,17 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: executed-notebooks
-          path: build/jupyter_execute/recipes
+          path: build/jupyter_execute/
           if-no-files-found: error
 
       - name: Prepare for Jupyter Lite
         run: |
-          cp README.md docs/recipes/
+          cp README.md docs/
           # Convert Jupytext to ipynb format.
           pixi run ./convert_all.sh ipynb
 
       - name: Build Jupyter Lite
-        run: pixi run -e jupyterlite jupyter lite build --contents docs/recipes --output-dir build/html/jupyterlite
+        run: pixi run -e jupyterlite jupyter lite build --contents docs/ --output-dir build/html/jupyterlite
 
       - name: Upload HTML as GitHub artifact
         uses: actions/upload-pages-artifact@v3
