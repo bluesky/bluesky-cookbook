@@ -1,6 +1,6 @@
 # Flyscanning
 
 ```{toctree}
-:glob:
-flyscanning/*
+:maxdepth: 2
+flyscanning/basics
 ```

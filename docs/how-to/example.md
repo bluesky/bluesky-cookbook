@@ -1,6 +1,6 @@
 # Example
 
 ```{toctree}
-:glob:
-example/*
+:maxdepth: 2
+example/demo
 ```
