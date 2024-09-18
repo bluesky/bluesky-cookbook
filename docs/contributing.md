@@ -28,10 +28,10 @@ git clone git@github.com:bluesky/bluesky-cookbook
 
 ## Overview
 
-Each "recipe" is a directory under `docs/recipes/tutorials/` or
-`docs/recipes/how-to/`. It may contain one or more Markdown (`.md`) files with
-a mixture of narrative text and code. Each recipe directory may also contain
-supporting data files, scripts, illustrations, solutions to exercises, etc.
+Each "recipe" is a directory under `docs/tutorials/` or `docs/how-to/`. It may
+contain one or more Markdown (`.md`) files with a mixture of narrative text and
+code. Each recipe directory may also contain supporting data files, scripts,
+illustrations, solutions to exercises, etc.
 
 ```none
 $ tree docs/
@@ -39,13 +39,14 @@ docs/
 ├── conf.py
 ├── contributing.md
 ├── index.md
-├── recipes
-│   ├── tutorials
-│   │   ├── getting-started
-│   │   │   └── hello-bluesky.md
-│   │   ├── flyscanning
-│   │   │   └── basic-demo.md
-│   ├── how-to
+├── tutorials
+│   ├── getting-started
+│   │   └── hello-bluesky.md
+│   ├── flyscanning
+│   │   └── basic-demo.md
+├── how-to
+│   ├── deploy
+│   │   └── single-process.md
 ...
 ```
 
@@ -90,13 +91,12 @@ Open `build/html/index.html` in a web browser.
 pixi run jupyter lab
 ```
 
-In the file browser, locate one of the examples under `docs/recipes/`. Double
-click to open.
+In the file browser, locate one of the examples under `docs/tutorials/` or
+`docs/how-to/`. Double click to open the directory.
 
-Files like `docs/recipes/static/static.md` are plain Markdown files. Files like
-`docs/recipes/executable/basics.md` have a YAML header which enables the
-documentation build system to convert them to Jupyter notebooks and execute
-them:
+Files like `docs/tutorial/getting-started/hello-bluesky.md` have a YAML header
+which enables the documentation build system to convert them to Jupyter
+notebooks and execute them:
 
 ```yaml
 ---
@@ -132,7 +132,7 @@ The script `test.sh` runs files with executable code from top to bottom and
 prints any unexpected tracebacks.
 
 ```
-pixi run ./test.sh docs/recipes/executable/basics.md
+pixi run ./test.sh docs/tutorials/getting-started/hello-bluesky.md
 ```
 
 `````{note}
@@ -171,5 +171,5 @@ Once changes are merged to the `main` branch, the GitHub Actions [Publish workfl
   where users need to be handed Jupyter Notebook files directly, such as Google
   Colab.
 
-[notebooks-branch]: https://github.com/bluesky/bluesky-cookbook/tree/notebooks/docs/recipes
+[notebooks-branch]: https://github.com/bluesky/bluesky-cookbook/tree/notebooks/
 [Publish workflow]: https://github.com/bluesky/bluesky-cookbook/actions/workflows/cd.yml

@@ -1,0 +1,6 @@
+# Flyscanning
+
+```{toctree}
+:glob:
+flyscanning/*
+```
