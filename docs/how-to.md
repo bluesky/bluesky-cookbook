@@ -2,5 +2,5 @@
 
 ```{toctree}
 :maxdepth: 2
-how-to/example/
+how-to/example
 ```
