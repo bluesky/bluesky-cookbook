@@ -13,7 +13,7 @@ if [ "$1" = "ipynb" ]; then
     files=$(find docs/ -name "*.md" | grep -v .ipynb_checkpoints)
     for file in $files; do
         # Extract the kernel information from the Jupytext Markdown file
-        kernel_info=$(grep -A 10 '^---$' "$file" | grep -E 'kernelspec')
+	kernel_info=$(head -n 15 "$file" | grep -A 10 '^---$' | grep -E 'kernelspec')
         # Skip if no kernel information was found
         if [ -z "$kernel_info" ]; then
             continue
