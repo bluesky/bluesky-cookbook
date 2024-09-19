@@ -19,19 +19,23 @@ build = { cmd = [
 clean = "rm -rf build/*"
 
 [dependencies]
-python = ">=3.12.5,<4"
+python = ">=3.11.10,<3.12"
 matplotlib-base = ">=3.9.2,<4"
 ipympl = ">=0.9.4,<0.10"
 jupyterlab = ">=4.2.5,<5"
 jupyterlab-myst = ">=2.4.2,<3"
 pydata-sphinx-theme = ">=0.15.4,<0.16"
 sphinxcontrib-serializinghtml = ">=1.1.10,<2"
+bluesky = ">=1.13.0a3,<2"
+tiled-server = ">=0.1.0b8,<0.2"
+tiled-client = ">=0.1.0b8,<0.2"
 
 [pypi-dependencies]
 sphinx = ">=8.0.2, <9"
 myst-nb = ">=1.1.1, <2"
 jupytext = ">=1.16.4, <2"
 sphinx-copybutton = ">=0.5.2, <0.6"
+ophyd-async = ">=0.2.0, <0.3"
 
 [feature.jupyterlite.dependencies]
 jupyterlab = "~=4.2.4"
