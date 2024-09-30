@@ -6,7 +6,7 @@ from typing import Optional
 
 class SampleSimulator(DefaultDuringTask):
 
-    """A helper class that connects simulated PatternDetector to SimMotors to mimick an actual physical sample.
+    """A helper class that connects simulated PatternDetector to SimMotors to mimic an actual physical sample.
 
     Changes the signal produced by the pattern detector depending on the motors' positions.
 
