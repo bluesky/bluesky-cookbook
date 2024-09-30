@@ -14,11 +14,3 @@ kernelspec:
 # Flyscanning Basics
 
 TODO
-
-```{code-cell}
-import ophyd_async
-```
-
-```{code-cell}
-
-```
