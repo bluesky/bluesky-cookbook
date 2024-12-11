@@ -26,8 +26,6 @@ jupyterlab = ">=4.2.5,<5"
 jupyterlab-myst = ">=2.4.2,<3"
 pydata-sphinx-theme = ">=0.15.4,<0.16"
 sphinxcontrib-serializinghtml = ">=1.1.10,<2"
-tiled-server = ">=0.1.0b8,<0.2"
-tiled-client = ">=0.1.0b8,<0.2"
 numpy = "<2.0.0"
 aioca = ">=1.7,<2"
 
@@ -39,6 +37,7 @@ sphinx-copybutton = ">=0.5.2, <0.6"
 bluesky = { git = "https://github.com/bluesky/bluesky.git", rev = "51bfc0339a75d8ae1f6e697dba51f524322d34ef"}
 ophyd-async = { version = ">=0.6.0", extras=["sim"]}
 ophyd = ">=1.9.0, <2"
+tiled = { version =">=0.1.0b12,<0.2", extras=["all"]}
 
 [feature.jupyterlite.dependencies]
 jupyterlab = "~=4.2.4"

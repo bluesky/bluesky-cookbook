@@ -32,10 +32,6 @@ from tiled.client import from_uri
 from pprint import pprint
 ```
 
-```{code-cell} ipython3
-!pip install canonicaljson
-```
-
 Start a local Tiled server, for example:
 ```bash
 tiled serve catalog --temp --api-key=secret
