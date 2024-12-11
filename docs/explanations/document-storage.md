@@ -102,6 +102,10 @@ scientific metadata only where it is needed.
 
 Additionally, while SQL is mature and robust, it is also experiencing something
 of a resurgence of interest at the moment, with new tooling and integrations.
+For example,
+[Arrow Database Connectivity](https://arrow.apache.org/adbc/current/index.html)
+provides high-performance, cross-language access to tabular data in a SQL
+database.
 
 Meanwhile, the case for MongoDB has grown weaker in some ways. After Bluesky's
 adoption, MongoDB unfortunately changed it license to a non-open-source
