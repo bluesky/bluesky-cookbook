@@ -28,7 +28,6 @@ pydata-sphinx-theme = ">=0.15.4,<0.16"
 sphinxcontrib-serializinghtml = ">=1.1.10,<2"
 numpy = "<2.0.0"
 aioca = ">=1.7,<2"
-pytest = ">=8.3.4,<9"
 
 [pypi-dependencies]
 sphinx = ">=8.0.2, <9"
