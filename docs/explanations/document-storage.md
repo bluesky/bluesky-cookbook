@@ -54,7 +54,7 @@ being ingested into the storage, rather than every time it is read.
 
 The new approach involves:
 
-1. A database of metadata and pointers to data (e.g. references to filepaths and URIs)
+1. A database of metadata and pointers to data (e.g. filepaths and URIs)
 2. A database of tabular data, ingested from Bluesky Event documents
 
 For both databases (1) and (2), we propose to begin by supporting PostgreSQL
