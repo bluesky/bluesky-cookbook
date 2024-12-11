@@ -11,13 +11,13 @@ kernelspec:
   name: python3
 ---
 
-# Registering Bluesky Data in Tiled
+# Saving Bluesky Data in Tiled
 
 +++
 
-In the standard Bluesky data model, it is assumed that each data point produced during an experiment is emitted in a separate Event document. During the acquisition, such high granularity enables fast feedback and supports low-latency downstream agents (e.g. live plotting), however the naive storage of individual documents as records in a noSQL database is not optimized for the retrieval of blocks of data spanning multiple rows. Instead, the recently developed solution presented here parses the Event data into a tabular format during ingestion.
+In the standard Bluesky data model, it is assumed that each data point produced during an experiment is emitted in a separate Event document. During the acquisition, such high granularity enables fast feedback and supports low-latency downstream agents (e.g. live plotting), however the naive storage of individual documents as records in a database or lines in a file is not optimized for the retrieval of blocks of data spanning multiple rows. Instead, the recently developed solution presented here parses the Event data into a tabular format during ingestion.
 
-This tutorial introduces TiledWriter -- a specialized callback in Bluesky designed to aggregate and store the incoming data in a way that would facilitate future random access. While initially conceived as a mechanism for registering array data asynchronously written by area detectors (see Flyscanning tutorial), TiledWriter supports the ingestion of all existing synchronous data modalities (e.g. the usual Event/Datum documents) and transforms their contents into a tabular form, suitable for the efficient retrieval of columns.
+This tutorial introduces TiledWriter -- a specialized callback in Bluesky designed to aggregate and store the incoming data in a way that would facilitate future random access. TiledWriter consumes Bluesky documents (all types of them) stores their contents at rest via API calls into a Tiled server. It transforms the data streams into a tabular form, suitable for the efficient retrieval of columns.
 
 +++
 
@@ -32,13 +32,36 @@ from tiled.client import from_uri
 from pprint import pprint
 ```
 
-```{code-cell} ipython3
-!pip install canonicaljson
-```
-
 Start a local Tiled server, for example:
 ```bash
 tiled serve catalog --temp --api-key=secret
+```
+
+```{code-cell} ipython3
+:tags: [hide-cell]
+
+# This is equiavalent to 'tiled server catalog --temp --api-key=secret' on a thread.
+# TODO Provide in tiled a more succinct way to do this.
+
+import tempfile
+import uvicorn
+from pathlib import Path
+from tiled.catalog import from_uri as catalog_from_uri
+from tiled.server.app import build_app
+# TODO Expose this publicly in Tiled.
+from tiled._tests.test_server import Server
+
+temp_directory = Path(tempfile.TemporaryDirectory().name)
+temp_directory.mkdir()
+catalog = catalog_from_uri(
+    temp_directory / "catalog.db",
+    writable_storage=temp_directory / "data",
+    init_if_not_exists=True,
+)
+app = build_app(catalog, authentication={"single_user_api_key": "secret"})
+server = Server(uvicorn.Config(app, port=8000))
+cm = server.run_in_thread()
+cm.__enter__()
 ```
 
 ```{code-cell} ipython3
