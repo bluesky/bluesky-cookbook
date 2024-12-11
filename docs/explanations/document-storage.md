@@ -112,6 +112,11 @@ adoption, MongoDB unfortunately changed it license to a non-open-source
 license. Some core features, including point-in-time backup/restore, are
 pay-walled.
 
+Finally, SQLite may unlock many interesting use cases, as a self-contained
+artifact. MongoDB has nothing comparable; while there are various attempts at
+something similar, none of them can touch the ubiquity or trusted robustness of
+SQLite.
+
 ## Approaching to the transition
 
 We core developers have not ever changed the recommended Bluesky document
