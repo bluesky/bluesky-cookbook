@@ -38,14 +38,14 @@ from pprint import pprint
 
 from tiled_server import TiledServer
 
-server = TiledServer(port=8000, api_key='secret', dir_path='tiled_data')
-server.run()
+server = TiledServer(api_key='secret', dir_path='tiled_data')
+tiled_uri = server.run()
 ```
 
 ```{code-cell} ipython3
 # Initialize a Tiled client
 
-client = from_uri("http://localhost:8000", api_key="secret")
+client = from_uri(tiled_uri, api_key="secret")
 client
 ```
 
@@ -140,7 +140,7 @@ res.fetchall()
 
 ```{code-cell} ipython3
 res = cur.execute("SELECT * FROM assets;")
-res.fetchone()
+res.fetchall()
 ```
 
 ```{code-cell} ipython3

@@ -35,7 +35,7 @@ class ThreadedServer(uvicorn.Server):
 
 class TiledServer:
     
-    def __init__(self, port=8000, dir_path=None, api_key="secret"):
+    def __init__(self, port=0, dir_path=None, api_key="secret"):
         if dir_path is None:
             dir_path = pathlib.Path(tempfile.TemporaryDirectory().name)
         else:
