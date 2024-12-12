@@ -7,9 +7,10 @@ core developers will soon recommend a change in how data and metadata from
 Bluesky documents should be stored.
 
 In the past, each Bluesky document has been stored as an individual record in a
-document database. This is well-suited to low-latency applications like live
-plotting, but it is not well optimized for common data analysis workloads,
-including batch reads or random access.
+document database. The Bluesky document representation is well-suited to
+low-latency applications like live plotting, but it is not optimized for
+storage at rest. Common data analysis workloads, including batch reads or
+random access, are not efficient.
 
 Now, the new recommendation involves transforming the contents of the Bluesky
 documents for storage at rest in a form that is more efficient for data access.
