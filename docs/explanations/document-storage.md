@@ -3,26 +3,27 @@
 ## Executive Summary
 
 For the first time in the ten-year history of the Bluesky project, the Bluesky
-core developers are recommending a change in how data and metadata from Bluesky
-documents should be stored at rest.
+core developers will soon recommend a change in how data and metadata from
+Bluesky documents should be stored.
 
-In the past, each Bluesky document has been stored as an individual record
-in a document database. This is not well optimized for common data analysis
-workloads, including batch reads or random access.
+In the past, each Bluesky document has been stored as an individual record in a
+document database. This is well-suited to low-latency applications like live
+plotting, but it is not well optimized for common data analysis workloads,
+including batch reads or random access.
 
-Now, the new recommendation involves extracting metadata and data from the
-Bluesky documents and storing it at rest in a form that is more efficient for
-data access. The implementation in development involves a change in technology
-from a document database (MongoDB) to SQL (PostgreSQL or SQLite).
+Now, the new recommendation involves transforming the contents of the Bluesky
+documents for storage at rest in a form that is more efficient for data access.
+The implementation in development involves a change in technology from a
+document database (MongoDB) to SQL (PostgreSQL or SQLite).
 
 ## Motivation for and problems with original storage
 
-From the earliest days in 2015, the Bluesky project has always recommended
-storing Bluesky documents in MongoDB as the "canonical" datastore, and
-optionally exporting their content in other (somewhat lossy) formats. There
-have been multiple Python APIs to this underlying MongoDB storage [^1]. Now there is
-also a secure HTTP API. But throughout the underlying storage that they write
-to and read from has been unchanged.
+From the earliest days in 2015, the Bluesky project has recommended storing
+Bluesky documents in MongoDB as the "canonical" datastore, and optionally
+exporting their content in other (sometimes lossy) formats. There have been
+multiple Python APIs to this underlying MongoDB storage, and more recently an
+HTTP API [^1]. But throughout the underlying storage that they write to and
+read from has been unchanged.
 
 A MongoDB database was created for each beamline instrument/endstation. Within
 each database, a MongoDB "collection" was created for each Bluesky document
