@@ -23,8 +23,8 @@ From the earliest days in 2015, the Bluesky project has recommended storing
 Bluesky documents in MongoDB as the "canonical" datastore, and optionally
 exporting their content in other (sometimes lossy) formats. There have been
 multiple Python APIs to this underlying MongoDB storage, and more recently an
-HTTP API [^1]. But throughout the underlying storage that they write to and
-read from has been unchanged.
+HTTP API [^1]. But the underlying storage that these APIs write to and read
+from has been unchanged.
 
 A MongoDB database was created for each beamline instrument/endstation. Within
 each database, a MongoDB "collection" was created for each Bluesky document
