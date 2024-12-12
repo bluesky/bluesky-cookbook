@@ -63,7 +63,7 @@ For both databases (1) and (2), we propose to begin by supporting PostgreSQL
 (for horizontally-scaled facility deployments) and SQLite (for development and
 lab bench deployments). These are well-established, widely-trusted
 technologies, and that is a strong consideration. Other technologies may be
-explored later. The next section elaborates on the choice of relationship
+explored later. The next section elaborates on the choice of relational
 databases over document databases.
 
 This provides good batch read performance and random access. It also transforms
