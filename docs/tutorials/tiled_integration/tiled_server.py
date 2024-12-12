@@ -33,7 +33,7 @@ class ThreadedServer(uvicorn.Server):
             thread.join()
 
 
-class TiledServer:
+class TempTiledServer:
     
     def __init__(self, port=0, dir_path=None, api_key="secret"):
         if dir_path is None:

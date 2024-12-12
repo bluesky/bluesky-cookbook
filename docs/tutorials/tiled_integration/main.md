@@ -36,9 +36,9 @@ from pprint import pprint
 # Start a local Tiled server
 # The following is equivalent to 'tiled server catalog --temp --api-key=secret'
 
-from tiled_server import TiledServer
+from tiled_server import TempTiledServer
 
-server = TiledServer(api_key='secret', dir_path='tiled_data')
+server = TempTiledServer(api_key='secret', dir_path='tiled_data')
 tiled_uri = server.run()
 ```
 
@@ -141,6 +141,10 @@ res.fetchall()
 ```{code-cell} ipython3
 res = cur.execute("SELECT * FROM assets;")
 res.fetchall()
+```
+
+```{code-cell} ipython3
+
 ```
 
 ```{code-cell} ipython3
