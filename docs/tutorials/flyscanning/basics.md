@@ -25,5 +25,7 @@ Implementing flyscanning in a supportable manner requires standards in hardware 
 * PandABox firmware​ PandABlocks-FPGA 3.0-4​ or greater
 * PandABox EPICS driver PandaBlocks-ioc 0.11.5​ or greater
 * Bluesky data acquisition interface layer ophyd-async 0.10.0a2​ or greater
+* Bluesky 1.13.1 or later
+* Tiled 0.1.0b20 or later (if used)
 
 This implementation is described in the remaining sections of this tutorial.
