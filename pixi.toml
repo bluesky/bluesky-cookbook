@@ -34,7 +34,7 @@ sphinx = ">=8.0.2, <9"
 myst-nb = ">=1.1.1, <2"
 jupytext = ">=1.16.4, <2"
 sphinx-copybutton = ">=0.5.2, <0.6"
-bluesky = { git = "https://github.com/bluesky/bluesky.git", rev = "51bfc0339a75d8ae1f6e697dba51f524322d34ef"}
+bluesky = ">=1.14, <2"
 ophyd-async = { version = ">=0.6.0", extras=["sim"]}
 ophyd = ">=1.9.0, <2"
 tiled = { version =">=0.1.0b12,<0.2", extras=["all"]}
