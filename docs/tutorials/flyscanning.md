@@ -8,6 +8,6 @@ flyscanning/setup-panda
 flyscanning/setup-epics
 flyscanning/orch-daq
 flyscanning/integration
-flyscaninng/ex-tomo
-flyscaninng/ex-spec
+flyscanning/ex-tomo
+flyscanning/ex-spec
 ```
