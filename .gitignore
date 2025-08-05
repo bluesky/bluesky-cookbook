@@ -3,6 +3,9 @@ docs/_build
 __pycache__/
 *.py[cod]
 
+# DS Store Files
+*.DS_Store
+
 # C extensions
 *.so
 
