@@ -6,7 +6,7 @@ flyscanning/basics
 flyscanning/setup-fw
 flyscanning/setup-panda
 flyscanning/setup-epics
-flyscanning/orch-daq
+flyscanning/data-management
 flyscanning/integration
 flyscanning/ex-tomo
 flyscanning/ex-spec
