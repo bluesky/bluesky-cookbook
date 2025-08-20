@@ -4,7 +4,8 @@ This section outlines how to integrate a PandABox with EPICS using the `PandABlo
 ## Setup the IP of PandABox
 To configure the IP address of the PandABox, create a text file named `panda-config.txt` with the following content. The IP address, gateway, and DNS entries in `panda-config.txt` should be updated to reflect the desired network settings for the PandABox.
 
-```txt 
+```
+
 # This file contains configuration settings. In this file network and other
 # settings can be adjusted.
 
